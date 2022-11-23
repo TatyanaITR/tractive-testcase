@@ -1,0 +1,115 @@
+.player-container{
+  --player-aspect-ratio: 1.77;
+  --player-width: 700px;
+  width: Min(var(--player-width), 100%);
+  height: calc(var(--player-width) / var(--player-aspect-ratio));
+  display: flex;
+  position: relative;
+}
+video{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  mask-image: url("../images/design/mask.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  border-radius: 5px;
+}
+.player-controls{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .bottom-panel{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 21px 26px;
+    .right-panel{
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+  }
+  .btn{
+    --w: 0;
+    --h: var(--w);
+    --font-size: 0;
+    background-color: rgba(255,255,255,.4);
+    color: white;
+    border-radius: 100%;
+    width: var(--w);
+    height: var(--h);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border:none;
+    font-size: var(--font-size);
+    cursor: pointer;
+    &.btn-sm{
+      --w: 30px;
+      --font-size: 12px;
+    }
+  }
+
+  .time{
+    font-size: 10px;
+  }
+
+  .volume-control{
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    .volume-icon{
+      display: flex;
+      gap: 2px;
+      align-items: center;
+      .bar{
+        --h: 3px;
+        --bg-color: rgba(0,0,0,.35);
+
+        width: 2px;
+        height: var(--h);
+        background-color: var(--bg-color);
+        &:nth-child(1){
+          --h: 3px;
+        }
+        &:nth-child(2){
+          --h: 7px;
+        }
+        &:nth-child(3){
+          --h: 18px;
+        }
+        &:nth-child(4){
+          --h: 22px;
+        }
+        &:nth-child(5){
+          --h: 14px;
+        }
+        &:nth-child(6){
+          --h: 10px;
+        }
+      }
+    }
+    .volume-bar{
+      position: absolute;
+      height: 100%;
+      inset: 0 -15px 0 -3px;
+      cursor: pointer;
+      opacity: 0;
+    };
+    @for $i from 1 to 7{
+      $vol: $i*16;
+      &.volume-#{$vol}{
+        @for $j from 0 to $i{
+          .bar:nth-child(#{$j+1}){
+            --bg-color: white;
+          }
+        }
+      }
+    }
+  }
+}

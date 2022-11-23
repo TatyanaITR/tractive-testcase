@@ -1,0 +1,49 @@
+body{
+  font-family: 'Raleway', sans-serif;
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  margin: 60px auto;
+  width: 1100px;
+}
+
+header{
+  position: relative;
+  display: flex;
+  align-items: center;
+  .hero-wrapper{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Caveat', cursive;
+    font-size: 29px;
+    text-align: left;
+    .hero-img{
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      border: 10px white solid;
+      background: url("../images/content/photo_2.jpg") no-repeat;
+      background-size: cover;
+      transform: rotate(15deg);
+    }
+  }
+}
+
+main{
+  margin-top: 40px;
+}
+.hidden{
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

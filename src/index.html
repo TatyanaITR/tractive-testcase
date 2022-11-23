@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tractive testcase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Raleway:wght@100;400;700&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Tractive test case of a frontend developer candidate</h1>
+        <div class="hero-wrapper">
+            <div class="hero-img" aria-label="Tatyana's profile picture"></div>
+            <div class="hero-text">It's me Rudnitskaya&nbsp;Tatyana</div>
+        </div>
+    </header>
+    <main>
+        <h2>Custom videoplayer</h2>
+        <div class="player-container" id="player-container">
+            <video id="video" preload="metadata"
+                   poster="images/content/poster.jpg">
+                <source src="https://tractive.com/assets/static/videos/ActivityMonitoring_15s_EN.mp4"
+                        type="video/mp4"/>
+            </video>
+
+            <div class="player-controls" id="player-controls">
+                <div class="bottom-panel">
+                    <div class="left-panel">
+                        <button class="btn btn-sm" id="play-btn" aria-label="play">
+                            <span class="icon fa-solid fa-play" aria-hidden="true"></span>
+                            <span class="icon fa-solid fa-pause hidden" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="time">
+                            <time id="time-elapsed">00:00</time>
+                        </div>
+                        <div id="volume-control" class="volume-control volume-96" aria-label="volume-control">
+                          <div class="volume-icon" aria-hidden="true">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                          </div>
+                           <input id="volume-bar"
+                                  class="volume-bar"
+                                   type="range"
+                                  value="96"
+                                   min="0"
+                                   max="96"
+                                   step="16">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="https://kit.fontawesome.com/1a88ec400f.js"
+        crossorigin="anonymous"></script>
+</body>
+</html>
